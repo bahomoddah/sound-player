@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --mainColor: #ff8a65;
+}
+
+body,
+.main,
+.right,
+.left,
+.left .volume,
+.right .middle,
+.right .middle button,
+.right .duration,
+.right .show_song_no {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+.main {
+  position: relative;
+  height: 80%;
+  width: 80%;
+  border-radius: 12px;
+  background: linear-gradient(to right, #5d6d7e, #566573);
+}
+
+.main button {
+  padding: 10px 12px;
+  margin: 0 10px;
+}
+
+.main #logo {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  font-size: 25px;
+  color: #ccc;
+}
+
+.main #logo i {
+  margin-right: 15px;
+}
+
+.right,
+.left {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  flex-direction: column;
+}
+
+.left img {
+  height: 300px;
+  width: 80%;
+  border-radius: 15px;
+  box-shadow: 1px 0px 20px 12px rgba(240, 240, 240, 0.2);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 50%;
+  outline: none;
+  height: 2px;
+  margin: 0 15px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background: var(--mainColor);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.right input[type="range"] {
+  width: 40%;
+}
+
+.left .volume {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  color: #fff;
+}
+
+.left .volume p {
+  font-size: 15px;
+}
+
+.left .volume i {
+  cursor: pointer;
+  padding: 8px 12px;
+  background: var(--mainColor);
+}
+
+.left .volume i:hover {
+  background: rgba(245, 245, 245, 0.1);
+}
+
+.volume #volume_show {
+  padding: 8px 12px;
+  margin: 0 5px 0 0;
+  background: rgba(245, 245, 245, 0.1);
+}
+
+.right .middle {
+  width: 100%;
+}
+
+.right .middle button {
+  border: none;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  transition: 0.5s;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.right #title {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: capitalize;
+  color: #fff;
+  font-size: 35px;
+}
+
+.right #artist {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: capitalize;
+  color: #fff;
+  font-size: 18px;
+}
+
+.right .duration {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 20px;
+  margin-top: 40px;
+}
+
+.right .duration p {
+  color: #fff;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+.right #auto {
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 45px;
+  border: none;
+  padding: 10px 14px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  border-radius: 10px;
+}
+
+.right #auto i {
+  margin-left: 8px;
+}
+
+#play {
+  background: var(--mainColor);
+}
+
+.right button:hover {
+  background: var(--mainColor);
+}
+
+.right i:before {
+  color: #fff;
+  font-size: 20px;
+}
+
+.right .show_song_no {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 20px;
+  padding: 8px 12px;
+  color: #fff;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.right .show_song_no p:nth-child(2) {
+  margin: 0 5px;
+}
+
+@media (max-width: 768px) {
+  .main {
+    height: 98%;
+    width: 98%;
+    border-radius: 4px;
+  }
+
+  .right #artist {
+    top: 160px;
+  }
+}
+
+@media (max-width: 640px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .left img {
+    height: auto;
+  }
+
+  .main {
+    height: 96%;
+    width: 96%;
+  }
+
+  .right,
+  .left {
+    height: 50%;
+    width: 70%;
+  }
+
+  input[type="range"] {
+    margin: 0 10px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    height: 10px;
+    width: 10px;
+  }
+
+  .left .volume {
+    bottom: 3%;
+    height: 20px;
+  }
+
+  .left .volume p {
+    font-size: 10px;
+  }
+
+  .left .volume i {
+    padding: 6px 10px;
+  }
+
+  .volume #volume_show {
+    padding: 6px 7px;
+  }
+
+  .right .middle button {
+    height: 35px;
+    width: 35px;
+  }
+
+  .right #title {
+    top: 13px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+  }
+
+  .right #artist {
+    top: 77px;
+    font-size: 16px;
+  }
+
+  .right .duration {
+    bottom: 15%;
+    height: 15px;
+    margin-top: 20px;
+  }
+
+  .right .duration p {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+
+  .right #auto {
+    font-size: 12px;
+    margin-top: 25px;
+    padding: 8px 12px;
+  }
+
+  .right #auto i {
+    margin-left: 5px;
+  }
+
+  .right i:before {
+    font-size: 10px;
+  }
+
+  .right .show_song_no {
+    top: 10px;
+    right: -10px;
+    width: 20px;
+    height: 15px;
+  }
+}
